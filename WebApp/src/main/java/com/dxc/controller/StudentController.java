@@ -66,20 +66,7 @@ public class StudentController {
 		return theStudent;
 	}
 	
-	@CrossOrigin
-	@DeleteMapping("/student/{studentId}")
-	public String deleteStudent(@PathVariable int studentId) {
-		
-		Student tempStudent = studentService.findById(studentId);
-		
-		if (tempStudent == null) {
-			throw new RuntimeException("Student id not found - " + studentId);
-		}
-		
-		studentService.deleteById(studentId);
-		
-		return "Deleted student id - " + studentId;
-	}
+
 	
 }
 
